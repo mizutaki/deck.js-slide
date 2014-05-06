@@ -1,0 +1,29 @@
+<!-- uttonをクリックすると、cssメソッドで取得したdiv要素の幅の値「300px」という文字列から「p」の文字が何番目にあるかを返して変数testに代入しアラートで表示します。結果として「3」が表示されます -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("button").click(function () {
+					var test = $("div").css("width").indexOf("p");
+					alert(test);
+				});
+			})			
+		</script>
+		
+		<style type="text/css">
+		<!--
+			div {
+				width:300px;
+				height:100px;
+				background-color:#ccc;
+			}
+		-->
+		</style>
+	</head>
+	<body>
+		<button>click</button>
+		<div></div>
+	</body>
+</html>

@@ -62,8 +62,53 @@
     </section>
 
     <section class="slide">
-      <h1>4</h1>
+      <h2>12.3 JQueryの基本</h2>
+      <h5>12-3-1 記述例</h5>
+      <pre><code>&lt;button class=&#039;foo&#039;&gt;リンクを追加する&lt;/button&gt;
+&lt;button class=&#039;foo&#039;&gt;反応しない&lt;/button&gt;
+&lt;script&gt;
+  $(&#039;button.foo:first&#039;).click(function(){
+    $(&#039;&lt;div&gt;&lt;a&gt;&lt;/a&gt;&lt;/div&gt;&#039;)
+    .find(&lt;a&gt;)
+      .text(&#039;JQuery.com&#039;)
+      .attr(&#039;href&#039;,(&#039;http://jqery.com&#039;)
+    .end()  
+    .appendTo((&#039;body&#039;)
+  });  
+&lt;script&gt;</code></pre>
     </section>
+
+    <section class="slide">
+      <h2>12.3 JQueryの基本</h2>
+      <div>先ほどの例をJavaScriptで書こうとすると。。。</div>
+      <pre><code>&lt;button class=&#039;foo&#039;&gt;リンクを追加する&lt;/button&gt;
+&lt;button class=&#039;foo&#039;&gt;反応しない&lt;/button&gt;
+&lt;script&gt;
+  var onClick = document.createElement(&#039;div&#039;);
+  長いので省略
+  var btn = document.getElementByTagName(&#039;button&#039;);
+  長いので省略
+&lt;script&gt;</code></pre>
+    <div>記述量も倍程度に増え、変数や制御構文が登場するのでバグが混入するリスクもアップしてしまう</div>
+    </section>
+
+    <section class="slide">
+      <h2>12.3 JQueryの基本</h2>
+      <h5>12-3-2 メソッドチェーン</h5>
+      <div>JQueryオブジェクトのほとんどのメソッドはJQueryオブジェクトを返すためその返り値に対してJQueryメソッドを実行する事ができる。</div><br>
+      <div>※ cssメソッドで引数にプロパティ名だけを指定した場合は、返値に「文字列」を返します。これに対し、文字列をオブジェクトとして利用するメソッドであれば連結できるのです。</div>
+      <pre><code>
+$(&quot;button&quot;).click(function(){
+  var test = $(&quot;div&quot;).css(&quot;width&quot;).indexOf(&quot;p&quot;);
+  alert(test);
+})</code></pre>
+    <h6>メソッドチェーン中のオブジェクト</h6>
+    <div>メソッドの返り値のJQueryオブジェクトは常に同一のオブジェクトという訳ではない</div>
+    <div>メソッド内で新しくJQueryオブジェクトを作成してそれを返している場合がある</div>
+    <div>find()で対象の要素を選択してend()で選択中の要素セットを一つ戻す</div>
+    <div>※　メソッドチェーンのデメリットととしてデバック中にブレークポイントが設定できないと言う事です</div>
+    </section>
+
 
     <!-- End slides. -->
 
