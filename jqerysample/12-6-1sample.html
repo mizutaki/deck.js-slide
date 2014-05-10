@@ -5,10 +5,10 @@
 		<script type="text/javascript" src="jquery-1.7.min.js"></script>
 	</head>
 	<body>
-		<div id="demo1">でも1</div>
-		<div class="demo2">でも2</div>
+		<div id="demo1">bind</div>
+		<div class="demo2">live</div>
 		<div id="demo3">
-			<p class="demo3">でも3</p>
+			<p class="demo3">delegate</p>
 		</div>
 		<script type="text/javascript">
 			//デモ１ idがdemo1の要素に対しclickイベントを登録
@@ -24,6 +24,21 @@
 
 			//デモ３ idがdemo3下のclassがdemo3の要素にクリックイベントを登録	
 			$('#demo3').delegate('.demo3','click', function(e){
+				$(e.target).clone().insertAfter(this);
+			});
+
+			//デモ１、２、３をonに置き換え
+			$('#demo1').on('click', function(e){
+				alert(e.type);
+				alert("on");
+			});
+
+			
+			$('.demo2').on('click', function(e){
+				$(this).clone().insertAfter(this);//demo2をcloneしてdemo2の後ろに追加
+			});
+			// delegateとと比べてイベントタイプと要素指定が逆になるので注意
+			$('#demo3').on('click','.demo3', function(e){
 				$(e.target).clone().insertAfter(this);
 			});
 

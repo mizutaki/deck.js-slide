@@ -46,23 +46,23 @@
     </section>
 
     <section class="slide">
-      <h2>12.2 JQueryの特徴</h2>
-      <div>JQueryは世界でもっとも多く利用されているJavaScriptのライブラリです。<div>
+      <h2>12.2 jQueryの特徴</h2>
+      <div>jQueryは世界でもっとも多く利用されているJavaScriptのライブラリです。<div>
       <div>作者はJohn Resig(ジョン・レシグ)氏です。</div>
       <img src="John Resig.jpg" align="right"></img>
       <div>2014年5月6日現在は1系が1.11.1 ２系が2.1.1となっておりました。</div>
-      <div>JQueryの特徴</div>
+      <div>jQueryの特徴</div>
       <ul>
         <li>圧縮後で31KBと計量(1.6.2?)</li>
         <li>メソッドチェーンによる記述</li>
         <li>CSS3 セレクタや独自セレクタによる要素の取得</li>
         <li>プラグインによる拡張性の高さ</li>
       </ul>
-      <div>UI用のJQueryは JQueryUIというものが別に存在します。</div>
+      <div>UI用のjQueryは jQueryUIというものが別に存在します。</div>
     </section>
 
     <section class="slide">
-      <h2>12.3 JQueryの基本</h2>
+      <h2>12.3 jQueryの基本</h2>
       <h5>12-3-1 記述例</h5>
       <pre><code>&lt;button class=&#039;foo&#039;&gt;リンクを追加する&lt;/button&gt;
 &lt;button class=&#039;foo&#039;&gt;反応しない&lt;/button&gt;
@@ -70,7 +70,7 @@
   $(&#039;button.foo:first&#039;).click(function(){
     $(&#039;&lt;div&gt;&lt;a&gt;&lt;/a&gt;&lt;/div&gt;&#039;)
     .find(&lt;a&gt;)
-      .text(&#039;JQuery.com&#039;)
+      .text(&#039;jQuery.com&#039;)
       .attr(&#039;href&#039;,(&#039;http://jqery.com&#039;)
     .end()  
     .appendTo((&#039;body&#039;)
@@ -79,7 +79,7 @@
     </section>
 
     <section class="slide">
-      <h2>12.3 JQueryの基本</h2>
+      <h2>12.3 jQueryの基本</h2>
       <div>先ほどの例をJavaScriptで書こうとすると。。。</div>
       <pre><code>&lt;button class=&#039;foo&#039;&gt;リンクを追加する&lt;/button&gt;
 &lt;button class=&#039;foo&#039;&gt;反応しない&lt;/button&gt;
@@ -93,9 +93,9 @@
     </section>
 
     <section class="slide">
-      <h2>12.3 JQueryの基本</h2>
+      <h2>12.3 jQueryの基本</h2>
       <h5>12-3-2 メソッドチェーン</h5>
-      <div>JQueryオブジェクトのほとんどのメソッドはJQueryオブジェクトを返すためその返り値に対してJQueryメソッドを実行する事ができる。</div><br>
+      <div>jQueryオブジェクトのほとんどのメソッドはjQueryオブジェクトを返すためその返り値に対してjQueryメソッドを実行する事ができる。</div><br>
       <div>※ cssメソッドで引数にプロパティ名だけを指定した場合は、返値に「文字列」を返します。これに対し、文字列をオブジェクトとして利用するメソッドであれば連結できるのです。</div>
       <pre><code>
 $(&quot;button&quot;).click(function(){
@@ -103,8 +103,8 @@ $(&quot;button&quot;).click(function(){
   alert(test);
 })</code></pre>
     <h6>メソッドチェーン中のオブジェクト</h6>
-    <div>メソッドの返り値のJQueryオブジェクトは常に同一のオブジェクトという訳ではない</div>
-    <div>メソッド内で新しくJQueryオブジェクトを作成してそれを返している場合がある</div>
+    <div>メソッドの返り値のjQueryオブジェクトは常に同一のオブジェクトという訳ではない</div>
+    <div>メソッド内で新しくjQueryオブジェクトを作成してそれを返している場合がある</div>
     <div>find()で対象の要素を選択してend()で選択中の要素セットを一つ戻す</div>
     <div>※　メソッドチェーンのデメリットととしてデバック中にブレークポイントが設定できないと言う事です</div>
     </section>
@@ -122,12 +122,12 @@ $(&quot;button&quot;).click(function(){
     </section>
 
     <section class="slide">
-      <h2>12.5 JQueryによるDOM</h2>
+      <h2>12.5 jQueryによるDOM</h2>
       <div>テキスト参照</div>
     </section>
 
     <section class="slide">
-      <h2>12.6 JQueryによるイベント処理</h2>
+      <h2>12.6 jQueryによるイベント処理</h2>
       <h5>12-6-1 イベントリスナの登録・削除</h5>
       <div>bind()とlive()とdelegete()の違いとは</div><br>
       <ul>
@@ -137,9 +137,26 @@ $(&quot;button&quot;).click(function(){
         <li>delegate() → delegate()は実行された要素とは別要素にイベントを登録できる</li>
       </ul>
       <img src="jqueryevent.png" align="left"></img>
-      <div>おまけ JQuery1.7でon()が実装されて上記3つの役割をこなすようになりました</div>
-      <div>JQuery2.1.1ではlive()とdelegate()は無くなっているようです</div>
+      <div>おまけ jQuery1.7でon()が実装されて上記3つの役割をこなすようになりました。</div>
+      <div>jQuery2.1.1ではlive()とdelegate()は無くなっているようです。</div>
     </section>
+
+    <section class="slide">
+      <h2>12.6 jQueryによるイベント処理</h2>
+      <h5>12-6-2 イベント専用のイベントリスナ登録</h5>
+      <div>テキスト参照 clickとかdblclickとかいろいろあります。全部小文字ですね。</div><br>
+      <h5>12-6-3 ready()メソッド</h5>
+      <div>jQueryでDOM構築後の処理を設定する</div>
+      <pre><code>$(documnt).ready(function () {
+readyイベントが発火するタイミングはDOMContentedLoaded(HTML解析が終わった直後)と同じ
+})
+
+$(function () {
+
+});</code></pre>
+    <div>上記２つは同じ意味</div>
+    </section>
+
 
 
     <!-- End slides. -->
