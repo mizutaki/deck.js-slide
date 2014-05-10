@@ -1,0 +1,32 @@
+<!-- uttonをクリックすると、cssメソッドで取得したdiv要素の幅の値「300px」という文字列から「p」の文字が何番目にあるかを返して変数testに代入しアラートで表示します。結果として「3」が表示されます -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="jquery-1.7.min.js"></script>
+	</head>
+	<body>
+		<div id="demo1">でも1</div>
+		<div class="demo2">でも2</div>
+		<div id="demo3">
+			<p class="demo3">でも3</p>
+		</div>
+		<script type="text/javascript">
+			//デモ１ idがdemo1の要素に対しclickイベントを登録
+			$('#demo1').bind('click', function(e){
+				alert(e.type);
+				alert("でも１");
+			});
+
+			//デモ２ classがdemo2の要素に対してクリックイベントを登録
+			$('.demo2').live('click', function(e){
+				$(this).clone().insertAfter(this);//demo2をcloneしてdemo2の後ろに追加
+			});
+
+			//デモ３ idがdemo3下のclassがdemo3の要素にクリックイベントを登録	
+			$('#demo3').delegate('.demo3','click', function(e){
+				$(e.target).clone().insertAfter(this);
+			});
+
+		</script>	
+	</body>
+</html>

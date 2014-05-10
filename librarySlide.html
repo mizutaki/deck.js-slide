@@ -126,6 +126,21 @@ $(&quot;button&quot;).click(function(){
       <div>テキスト参照</div>
     </section>
 
+    <section class="slide">
+      <h2>12.6 JQueryによるイベント処理</h2>
+      <h5>12-6-1 イベントリスナの登録・削除</h5>
+      <div>bind()とlive()とdelegete()の違いとは</div><br>
+      <ul>
+        <li>bind() → bind()を実行時点で存在した要素のみに作用する</li>
+        <li>live() → live()を実行後に存在した要素にも作用する ※Jquery1.9で削除されてしまった</li>
+        <a href="http://api.jquery.com/live/">参考サイト</a>
+        <li>delegate() → delegate()は実行された要素とは別要素にイベントを登録できる</li>
+      </ul>
+      <img src="jqueryevent.png" align="left"></img>
+      <div>おまけ JQuery1.7でon()が実装されて上記3つの役割をこなすようになりました</div>
+      <div>JQuery2.1.1ではlive()とdelegate()は無くなっているようです</div>
+    </section>
+
 
     <!-- End slides. -->
 
