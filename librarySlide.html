@@ -40,25 +40,25 @@
 
     <section class="slide">
       <h2>12.1 ライブラリを使う理由</h2>
-      <div>ライブラリを使用する事で一番面倒なクロスブラウザ対策にかかる労力を減らす</div><br>
-      <div>※ クロスブラウザとは、動作するWebブラウザは明示せず、如何なる環境下でもコンテンツが何かしらの状態で提供されることを保証した状態のことを表します。</div>
+      <p>ライブラリを使用する事で一番面倒なクロスブラウザ対策にかかる労力を減らす</p>
+      <p>※ クロスブラウザとは、動作するWebブラウザは明示せず、如何なる環境下でもコンテンツが何かしらの状態で提供されることを保証した状態のことを表します。</p>
       <a href="http://furoshiki.hatenadiary.jp/entry/2013/10/16/083420">参考サイト</a>
     </section>
 
     <section class="slide">
       <h2>12.2 jQueryの特徴</h2>
-      <div>jQueryは世界でもっとも多く利用されているJavaScriptのライブラリです。<div>
-      <div>作者はJohn Resig(ジョン・レシグ)氏です。</div>
+      <p>jQueryは世界でもっとも多く利用されているJavaScriptのライブラリです。<p>
+      <p>作者はJohn Resig(ジョン・レシグ)氏です。</p>
       <img src="John Resig.jpg" align="right"></img>
-      <div>2014年5月6日現在は1系が1.11.1 ２系が2.1.1となっておりました。</div>
-      <div>jQueryの特徴</div>
+      <p>2014年5月6日現在は1系が1.11.1 ２系が2.1.1となっておりました。</p>
+      <p>jQueryの特徴</p>
       <ul>
         <li>圧縮後で31KBと計量(1.6.2?)</li>
         <li>メソッドチェーンによる記述</li>
         <li>CSS3 セレクタや独自セレクタによる要素の取得</li>
         <li>プラグインによる拡張性の高さ</li>
       </ul>
-      <div>UI用のjQueryは jQueryUIというものが別に存在します。</div>
+      <p>UI用のjQueryは jQueryUIというものが別に存在します。</p>
     </section>
 
     <section class="slide">
@@ -80,7 +80,7 @@
 
     <section class="slide">
       <h2>12.3 jQueryの基本</h2>
-      <div>先ほどの例をJavaScriptで書こうとすると。。。</div>
+      <p>先ほどの例をJavaScriptで書こうとすると。。。</p>
       <pre><code>&lt;button class=&#039;foo&#039;&gt;リンクを追加する&lt;/button&gt;
 &lt;button class=&#039;foo&#039;&gt;反応しない&lt;/button&gt;
 &lt;script&gt;
@@ -89,47 +89,47 @@
   var btn = document.getElementByTagName(&#039;button&#039;);
   長いので省略
 &lt;script&gt;</code></pre>
-    <div>記述量も倍程度に増え、変数や制御構文が登場するのでバグが混入するリスクもアップしてしまう</div>
+    <p>記述量も倍程度に増え、変数や制御構文が登場するのでバグが混入するリスクもアップしてしまう</p>
     </section>
 
     <section class="slide">
       <h2>12.3 jQueryの基本</h2>
       <h5>12-3-2 メソッドチェーン</h5>
-      <div>jQueryオブジェクトのほとんどのメソッドはjQueryオブジェクトを返すためその返り値に対してjQueryメソッドを実行する事ができる。</div><br>
-      <div>※ cssメソッドで引数にプロパティ名だけを指定した場合は、返値に「文字列」を返します。これに対し、文字列をオブジェクトとして利用するメソッドであれば連結できるのです。</div>
+      <p>jQueryオブジェクトのほとんどのメソッドはjQueryオブジェクトを返すためその返り値に対してjQueryメソッドを実行する事ができる。</p>
+      <p>※ cssメソッドで引数にプロパティ名だけを指定した場合は、返値に「文字列」を返します。これに対し、文字列をオブジェクトとして利用するメソッドであれば連結できるのです。</p>
       <pre><code>
 $(&quot;button&quot;).click(function(){
   var test = $(&quot;div&quot;).css(&quot;width&quot;).indexOf(&quot;p&quot;);
   alert(test);
 })</code></pre>
     <h6>メソッドチェーン中のオブジェクト</h6>
-    <div>メソッドの返り値のjQueryオブジェクトは常に同一のオブジェクトという訳ではない</div>
-    <div>メソッド内で新しくjQueryオブジェクトを作成してそれを返している場合がある</div>
-    <div>find()で対象の要素を選択してend()で選択中の要素セットを一つ戻す</div>
-    <div>※　メソッドチェーンのデメリットととしてデバック中にブレークポイントが設定できないと言う事です</div>
+    <p>メソッドの返り値のjQueryオブジェクトは常に同一のオブジェクトという訳ではない。メソッド内で新しくjQueryオブジェクトを作成してそれを返している場合がある。find()で対象の要素を選択してend()で選択中の要素セットを一つ戻す。</p>
+    
+    
+    <p>※　メソッドチェーンのデメリットととしてデバック中にブレークポイントが設定できないと言う事です</p>
     </section>
 
     <section class="slide">
       <h2>12.4 $関数</h2>
       <h5>12-4-1 セレクタにマッチする要素を抽出する</h5>
-      <div>$('#foo div.bar') $('div.bar', '#foo');</div><br>
+      <p>$('#foo div.bar') $('div.bar', '#foo');</p>
       <h5>12-4-2 新しくDOM要素を作成する</h5>
-      <div>$('&lt;div&gt;新しいdiv要素&lt;/div&gt;'');</div><br>
+      <p>$('&lt;div&gt;新しいdiv要素&lt;/div&gt;'');</p>
       <h5>12-4-3 既存のDOM要素をJqueryオブジェクトに変換する</h5>
-      <div>$('document.body');</div><br>
+      <p>$('document.body');</p>
       <h5>12-4-4 DOM構築後のイベントリスナを設定する</h5>
-      <div>テキスト参照</div>
+      <p>テキスト参照</p>
     </section>
 
     <section class="slide">
       <h2>12.5 jQueryによるDOM</h2>
-      <div>テキスト参照</div>
+      <p>テキスト参照</p>
     </section>
 
     <section class="slide">
       <h2>12.6 jQueryによるイベント処理</h2>
       <h5>12-6-1 イベントリスナの登録・削除</h5>
-      <div>bind()とlive()とdelegete()の違いとは</div><br>
+      <p>bind()とlive()とdelegete()の違いとは</p>
       <ul>
         <li>bind() → bind()を実行時点で存在した要素のみに作用する</li>
         <li>live() → live()を実行後に存在した要素にも作用する ※Jquery1.9で削除されてしまった</li>
@@ -137,16 +137,16 @@ $(&quot;button&quot;).click(function(){
         <li>delegate() → delegate()は実行された要素とは別要素にイベントを登録できる</li>
       </ul>
       <img src="jqueryevent.png" align="left"></img>
-      <div>おまけ jQuery1.7でon()が実装されて上記3つの役割をこなすようになりました。</div>
-      <div>jQuery2.1.1ではlive()とdelegate()は無くなっているようです。</div>
+      <p>おまけ jQuery1.7でon()が実装されて上記3つの役割をこなすようになりました。</p>
+      <p>jQuery2.1.1ではlive()とdelegate()は無くなっているようです。</p>
     </section>
 
     <section class="slide">
       <h2>12.6 jQueryによるイベント処理</h2>
       <h5>12-6-2 イベント専用のイベントリスナ登録</h5>
-      <div>テキスト参照 clickとかdblclickとかいろいろあります。全部小文字ですね。</div><br>
+      <p>テキスト参照 clickとかdblclickとかいろいろあります。全部小文字ですね。</p>
       <h5>12-6-3 ready()メソッド</h5>
-      <div>jQueryでDOM構築後の処理を設定する</div>
+      <p>jQueryでDOM構築後の処理を設定する</p>
       <pre><code>$(documnt).ready(function () {
 readyイベントが発火するタイミングはDOMContentedLoaded(HTML解析が終わった直後)と同じ
 })
@@ -154,22 +154,22 @@ readyイベントが発火するタイミングはDOMContentedLoaded(HTML解析�
 $(function () {
 
 });</code></pre>
-    <div>上記２つは同じ意味</div>
+    <p>上記２つは同じ意味</p>
     </section>
 
     <section class="slide">
       <h2>12.7 jQueryによるスタイル操作</h2>
       <h5>12-7-1 基本的な操作スタイル</h5>
-      <div>スタイルを操作する中でもcss()メソッドは汎用的に使え、記述方法も直感的ですね。</div><br>
+      <p>スタイルを操作する中でもcss()メソッドは汎用的に使え、記述方法も直感的ですね。</p>
       <h5>12-7-2 アニメーション</h5>
-      <div>アニメーション系メソッドの多くがduration, easing, callbackを引数として受けとる事ができる</div>
+      <p>アニメーション系メソッドの多くがduration, easing, callbackを引数として受けとる事ができる</p>
       <ul>
         <li>duration(時間) デフォルト値は400ミリ秒　単位はミリ秒指定</li>
         <li>easing(加減速) デフォルト値はswing </li>
         <ul>
           <li>swing 最初ゆっくり、中間早く、最後ゆっくり</li>
           <li>liner 経過時間に比例して値が線形に変化する</li>
-          <div>jQueryUIで指定キーワードを拡張可
+          <p>jQueryUIで指定キーワードを拡張可</p>
         </ul>
         <li>callback(完了処理) clallback関数は引数を何も受け取らない コールバック関数内のthisはアニメーションしているDOM要素</li>
       </ul>
@@ -178,22 +178,22 @@ $(function () {
     <section class="slide">
       <h2>12.8 jQueryによるAJAX</h2>
       <h5>12-8-1 AJAX関数()</h5>
-      <div>jQueryによるAJAX処理にはjQuery.ajax()を使います。引数は２つ渡します。</div>
+      <p>jQueryによるAJAX処理にはjQuery.ajax()を使います。引数は２つ渡します。</p>
       <ul>
         <li>第1引数 対象のURLを指定</li>
         <li>第2引数 パラメータ、使用するHTTPメソッド、コールバック関数等のオブジェクト</li>
-        <div>※　第1引数を省略して、第2引数のオブジェクトのプロパティとしてURLを指定する事も可</div>
-      </ul><br>
+        <p>※　第1引数を省略して、第2引数のオブジェクトのプロパティとしてURLを指定する事も可</p>
+      </ul>
       <h5>12-8-2 AJAX()のラッパー関数</h5>
-      <div>post(),get()等があるが内部的にはajax()を　呼び出している。簡易的に使える。</div>
-      <a href="./jquerysample/youtube-sample.html">sample</a><br>
+      <p>post(),get()等があるが内部的にはajax()を　呼び出している。簡易的に使える。</p>
+      <a href="./jquerysample/youtube-sample.html">sample</a>
       <h5>12-8-3 グローバルイベント</h5>
-      <div>ajax()を使うといくつかのイベントが発火して、それらはどの要素にも適用されるのでグローバルイベントと呼ばれる。</div>
+      <p>ajax()を使うといくつかのイベントが発火して、それらはどの要素にも適用されるのでグローバルイベントと呼ばれる。</p>
     </section>
 
     <section class="slide">
       <h2>12-9 Deferred</h2>
-      <div>非同期処理の直列を簡単に処理する為の仕組み</div><br>
+      <p>非同期処理の直列を簡単に処理する為の仕組み</p>
       <h5>12-9-1 Deferredの基本</h5>
       <ul>
         <li>deferredオブジェクト</li>
@@ -207,10 +207,54 @@ $(function () {
             <li>Deferredオブジェクトをそのまま返した時に、返し先で勝手に状態遷移させられるのを防ぐ意図がある。</li>
           </ul>
       </ul>
-      <h5>12-9-2 状態遷移</h5>
-      <h5>12-9-3 後続関数</h5>
     </section>
 
+    <section class="slide">
+      <h2>12-9 Deferred</h2>
+      <p>非同期処理の直列を簡単に処理する為の仕組み</p>
+      <h5>12-9-2 状態遷移</h5>
+      <p>unresolvedをresolvedに変化させるメソッドがresolve()。rejectedに変化させるメソッドがreject()。</p>
+      <p>Defrredオブジェクトは一度状態遷移すると別の状態に変化する事はない。</p>
+    </section>
+
+    <section class="slide">
+      <h2>12-9 Deferred</h2>
+      <h5>12-9-3 後続関数(コールバック関数)</h5>
+        <ul>
+          <li>then() 第1引数がresolved,第2引数がrejectedになった時の処理</li>
+          <li>done() 状態がresolvedになった時の処理</li>
+          <li>fail() 状態がrejectedになった時の処理</li>
+          <li>always() resolved,rejected両方実行される</li>
+        </ul>
+      <h5>12-9-4 並列処理</h5>
+      <p>when()を使うと複数の非同期処理がすべて完了するまで後続の処理を遅延させる事ができる。</p>
+    </section>
+
+   <section class="slide">
+      <h2>12.10 jQueryプラグイン</h2>
+      <h5>12-10-1 jQueryプラグインの利用</h5>
+      <p>jQueryを読み込んだ後にプラグインのJavaSciptライブラリを読み込む</p>
+      <h5>12-10-2 jQueryプラグインの作成</h5>
+      <p>テキスト参照</p>
+    </section>
+
+    <section class="slide">
+      <h2>12.11 他ライブラリとの共存</h2>
+      <h5>12-11-1 $オブジェクトの衝突</h5>
+      <p>jQueryはグローバルスコープにjQueryオブジェクトと$というオブジェクトを作成する。</p>
+      <p>$という名前をしようしているJavaScriptライブラリは他にもある。(prototype.js等)</p>
+      <h5>12-11-2 $オブジェクトの衝突回避</h5>
+      <p>jQueryには名前衝突を回避するnoConflict()とというメソッドがある。</p>
+      <pre><code>
+jQuery.noConflict();//window.$を削除
+var $j = jQuery.noConflict(true);//window.$とwindow.Jqueryを両方を削除する返り値はjQueryオブジェクト
+})</code></pre>
+    </section>
+
+    <section class="slide">
+      <h2>12.12 ライブラリの利用方法</h2>
+      <p>テキスト参照</p>
+    </section>
 
 
     <!-- End slides. -->
