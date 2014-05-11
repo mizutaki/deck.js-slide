@@ -114,7 +114,7 @@ $(&quot;button&quot;).click(function(){
       <h5>12-4-1 セレクタにマッチする要素を抽出する</h5>
       <p>$('#foo div.bar') $('div.bar', '#foo');</p>
       <h5>12-4-2 新しくDOM要素を作成する</h5>
-      <p>$('&lt;div&gt;新しいdiv要素&lt;/div&gt;'');</p>
+      <p>$('&lt;div&gt;新しいdiv要素&lt;/div&gt;');</p>
       <h5>12-4-3 既存のDOM要素をJqueryオブジェクトに変換する</h5>
       <p>$('document.body');</p>
       <h5>12-4-4 DOM構築後のイベントリスナを設定する</h5>
@@ -247,8 +247,9 @@ $(function () {
       <p>jQueryには名前衝突を回避するnoConflict()とというメソッドがある。</p>
       <pre><code>
 jQuery.noConflict();//window.$を削除
-var $j = jQuery.noConflict(true);//window.$とwindow.Jqueryを両方を削除する返り値はjQueryオブジェクト
-})</code></pre>
+var $j = jQuery.noConflict(true);
+       //window.$とwindow.Jqueryを両方を削除する返り値はjQueryオブジェクト
+</code></pre>
     </section>
 
     <section class="slide">

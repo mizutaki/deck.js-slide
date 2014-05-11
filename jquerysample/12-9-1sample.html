@@ -1,0 +1,28 @@
+<!-- uttonをクリックすると、cssメソッドで取得したdiv要素の幅の値「300px」という文字列から「p」の文字が何番目にあるかを返して変数testに代入しアラートで表示します。結果として「3」が表示されます -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="jquery-1.7.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				function foo() {
+					var d = $.Deferred();//Deferredオブジェクト作成
+					//非同期処理
+					setTimeout(function () {
+						alert('foo resolve前');
+						d.resolve();//Deferredに処理が終了した事を通知
+						alert('foo resolve後');
+					}, 0);
+					return d.promise();	
+				}
+				function bar() {
+					alert('bar');
+				}
+
+				foo().then(bar);
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
