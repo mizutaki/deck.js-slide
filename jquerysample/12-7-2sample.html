@@ -1,0 +1,23 @@
+<!-- uttonをクリックすると、cssメソッドで取得したdiv要素の幅の値「300px」という文字列から「p」の文字が何番目にあるかを返して変数testに代入しアラートで表示します。結果として「3」が表示されます -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="jquery-1.7.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.foo').bind('click', function(){
+					hide();
+				});
+			});
+			function hide() {
+				$('.foo').hide("slow", "swing",function(){
+					$(this).css("background", "blue");
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div class="foo">Click Me!</div>
+		<div class="bar">Double Click Me!</div>
+	</body>
+</html>

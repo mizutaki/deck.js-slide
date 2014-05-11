@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>YouTube Juke Box for ドットインストール</title>
+        <style>
+        	body{
+        		text-align: center;
+        	}
+        	#player{
+        		width: 640px;
+        		height: 360px;
+        	}
+        	ul{
+        		list-style-type:none;
+        		padding: 0;
+        		margin: 0; 
+        	}
+        	li.movie{
+        		float: left;
+        		width: 120px;
+        		padding: 30px;
+        	}
+        	li.movie.on{
+        		background-color: #0000FF; 
+        	}
+        	li.movie.playing{
+        		background-color: #faa; 
+        	}
+
+        </style>
+    </head>
+    <body>
+    	<h1>YouTube Juke Box for ドットインストール</h1>
+    	<hr>
+    	<div id="player"></div>
+    	<hr>
+    	<form id="search" onsubmit="return false;">
+    	<input type="text" id="q">
+    	<input type="submit" value="Search!">
+    	</form>
+    	<hr>
+    	<input type="button" id="prev" value="<< Prev">
+    	<input type="button" id="play" value="Play">
+    	<input type="button" id="pause" value="Pause">
+    	<input type="button" id="next" value="Next >>">
+    	<hr>
+    	<ul id="list">
+
+    	</ul>
+    	<script src="jquery-2.1.1.min.js"></script>
+    	<script src="script.js"></script>
+    	<script src="http://www.youtube.com/player_api"></script>
+    </body>
+</html>

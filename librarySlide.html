@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=1024, user-scalable=no">
 
-  <title>Your deck.js Presentation</title>
+  <title>12章 ライブラリ</title>
 
   <!-- Required stylesheet -->
   <link rel="stylesheet" media="screen" href="core/deck.core.css">
@@ -155,6 +155,60 @@ $(function () {
 
 });</code></pre>
     <div>上記２つは同じ意味</div>
+    </section>
+
+    <section class="slide">
+      <h2>12.7 jQueryによるスタイル操作</h2>
+      <h5>12-7-1 基本的な操作スタイル</h5>
+      <div>スタイルを操作する中でもcss()メソッドは汎用的に使え、記述方法も直感的ですね。</div><br>
+      <h5>12-7-2 アニメーション</h5>
+      <div>アニメーション系メソッドの多くがduration, easing, callbackを引数として受けとる事ができる</div>
+      <ul>
+        <li>duration(時間) デフォルト値は400ミリ秒　単位はミリ秒指定</li>
+        <li>easing(加減速) デフォルト値はswing </li>
+        <ul>
+          <li>swing 最初ゆっくり、中間早く、最後ゆっくり</li>
+          <li>liner 経過時間に比例して値が線形に変化する</li>
+          <div>jQueryUIで指定キーワードを拡張可
+        </ul>
+        <li>callback(完了処理) clallback関数は引数を何も受け取らない コールバック関数内のthisはアニメーションしているDOM要素</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>12.8 jQueryによるAJAX</h2>
+      <h5>12-8-1 AJAX関数()</h5>
+      <div>jQueryによるAJAX処理にはjQuery.ajax()を使います。引数は２つ渡します。</div>
+      <ul>
+        <li>第1引数 対象のURLを指定</li>
+        <li>第2引数 パラメータ、使用するHTTPメソッド、コールバック関数等のオブジェクト</li>
+        <div>※　第1引数を省略して、第2引数のオブジェクトのプロパティとしてURLを指定する事も可</div>
+      </ul><br>
+      <h5>12-8-2 AJAX()のラッパー関数</h5>
+      <div>post(),get()等があるが内部的にはajax()を　呼び出している。簡易的に使える。</div>
+      <a href="./jquerysample/youtube-sample.html">sample</a><br>
+      <h5>12-8-3 グローバルイベント</h5>
+      <div>ajax()を使うといくつかのイベントが発火して、それらはどの要素にも適用されるのでグローバルイベントと呼ばれる。</div>
+    </section>
+
+    <section class="slide">
+      <h2>12-9 Deferred</h2>
+      <div>非同期処理の直列を簡単に処理する為の仕組み</div><br>
+      <h5>12-9-1 Deferredの基本</h5>
+      <ul>
+        <li>deferredオブジェクト</li>
+          <ul>
+            <li>初期状態はunresolved unresolvedである限り後続処理は実行されない。</li>
+            <li>内部的なDeferredの仕組みは、コールバック関数を登録しておいてDeferredオブジェクトの状態がresolvedかrejectedに変化したときにその関数を実行する。</li>
+          </ul>
+        <li>promiseオブジェクト</li>
+          <ul>
+            <li>Deferredオブジェクトから一部のメソッドを削除したオブジェクト。</li>
+            <li>Deferredオブジェクトをそのまま返した時に、返し先で勝手に状態遷移させられるのを防ぐ意図がある。</li>
+          </ul>
+      </ul>
+      <h5>12-9-2 状態遷移</h5>
+      <h5>12-9-3 後続関数</h5>
     </section>
 
 
