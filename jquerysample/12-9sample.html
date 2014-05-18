@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+			    $('#button').click(function() {
+			    	var hoge = $.ajax({
+				    		url:'DeferredHello.txt',
+				    		dataType:'text',
+				    		cache:false,
+				    		success:function(data, textStatus) {
+				    			$('#div1').html(data);
+				    			alert(data);
+				    		},
+				    		error: function(xhr, textStatus, errorThrown) {
+				    			alert('Error!' + textStatus + '' + errorThrown);
+				    		}
+				   		});
+			    	var fuga = $.ajax({
+				    		url:'DeferredWorld!.txt',
+				    		dataType:'text',
+				    		cache:false,
+				    		success:function(data, textStatus) {
+				    			$('#div2').html(data);
+				    			alert(data);
+				    		},
+				    		error: function(xhr, textStatus, errorThrown) {
+				    			alert('Error!' + textStatus + '' + errorThrown);
+				    		}
+				   		});
+			    	$.when(hoge, fuga).then(function(hoge, fuga){
+			    		$('#div3').html(hoge[0] + fuga[0]);
+			    	},
+			    	function (){
+			    		alert("文字連結失敗");
+			    	});
+				});
+			});
+			</script>
+	</head>
+	<body>
+	    <button id="button">click</button>
+	    <div id="div1"></div>
+	    <div id="div2"></div>
+	    <div id="div3"></div>
+	</body>
+</html>

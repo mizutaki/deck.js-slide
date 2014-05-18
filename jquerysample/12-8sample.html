@@ -11,6 +11,7 @@
 			    		cache:false,
 			    		success:function(data, textStatus) {
 			    			$('#div1').html(data);
+			    			$('#div2').html(textStatus);
 			    		},
 			    		error: function(xhr, textStatus, errorThrown) {
 			    			alert('Error!' + textStatus + '' + errorThrown);
@@ -37,7 +38,8 @@
 			</style>
 	</head>
 	<body>
-	    <button id="button">toggle</button>
+	    <button id="button">click</button>
 	    <div id="div1"></div>
+	    <div id="div2"></div>
 	</body>
 </html>

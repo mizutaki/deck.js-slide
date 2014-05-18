@@ -184,9 +184,9 @@ $(function () {
         <li>第2引数 パラメータ、使用するHTTPメソッド、コールバック関数等のオブジェクト</li>
         <p>※　第1引数を省略して、第2引数のオブジェクトのプロパティとしてURLを指定する事も可</p>
       </ul>
-      <a href="./jquerysample/12-8sample.html">sample 1</a>
+      <a href="./jquerysample/12-8sample.html">ajax</a>
       <h5>12-8-2 AJAX()のラッパー関数</h5>
-      <p>post(),get()等があるが内部的にはajax()を　呼び出している。簡易的に使える。</p>
+      <p>post(),get()等があるが内部的にはajax()を呼び出している。簡易的に使える。</p>
       <h5>12-8-3 グローバルイベント</h5>
       <p>ajax()を使うといくつかのイベントが発火して、それらはどの要素にも適用されるのでグローバルイベントと呼ばれる。</p>
     </section>
@@ -211,7 +211,6 @@ $(function () {
 
     <section class="slide">
       <h2>12-9 Deferred</h2>
-      <p>非同期処理の直列を簡単に処理する為の仕組み</p>
       <h5>12-9-2 状態遷移</h5>
       <ul>
         <li><p>unresolved →︎ resolvedに変化させるメソッドがresolve()。</p></li>
@@ -236,8 +235,10 @@ $(function () {
     </section>
 
     <section class="slide">
+      <h2>12-9 Deferred</h2>
       <h5>12-9-4 並列処理</h5>
       <p>when()を使うと複数の非同期処理がすべて完了するまで後続の処理を遅延させる事ができる。</p>
+      <a href="jquerysample/12-9sample.html">Deferred When()</a>
       <p>AJAX関数の返す返り値もDeferredオブジェクト(Promiseオブジェクト)です。
         ※ 上記は、jqXHRオブジェクトと呼ばれPromiseオブジェクトの機能を持ち合わせている。
         これにより、deferred.doneなとのコールバック関数を利用できるがdeferred.resolvedなどの
@@ -271,7 +272,6 @@ var $j = jQuery.noConflict(true);
       <h2>12.12 ライブラリの利用方法</h2>
       <p>テキスト参照</p>
     </section>
-
 
     <!-- End slides. -->
 
